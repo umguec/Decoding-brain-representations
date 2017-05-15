@@ -3,10 +3,10 @@ DONDERS (f)MRI TOOL-KIT: From Image Acquisition to Computation Model
 
 In this hands-on session, you will implement a neural decoder for reconstructing stimuli from responses. We will use a dataset, which was used in the following papers:
 
-[1]
-[2]
-[3]
-[4]
+[1]  
+[2]  
+[3]  
+[4]  
 
 
 A brief sketch of the approach
@@ -82,10 +82,14 @@ In the case of the liklihood, the mean of the Gaussian is given by **B'** **x** 
 
 In the case of the prior, the mean of the Gaussian is given by **0** and its covariance matrix is given by **X**_prior' * **X**_prior / (n_prior - 1).
 
+## Task
+
 - Estimate **B**. Normally, you should use cross validation to estimate lambda and Sigma_liklihood. For simplicity, you can assume that lambda = 10 ^ -6 and Sigma_liklihood = 10 ^ -3 * **I**.
 - Estimate **Sigma**_prior.
 Tip: regularize Sigma_prior by adding lambda to its diagonal).
 - Visualize Sigma_prior (tip: you can use imagesc function).
+
+---
 
 Now, we can obtain the posterior by multiplying the likelihood and the prior. It turns out that the product of two Gaussians is another Gaussian with the following parameters:
 
@@ -112,5 +116,7 @@ which was our goal! We can now plug any response in the above equation and recon
 - Reconstruct the stimuli in the test set.
 - Visualize the reconstructions (tip: you can use reshape and imshow/imagesc functions).
 - Compare the reconstructions with the earlier reconstructions.
+
+---
 
 Congratulations, you have reached the end!
