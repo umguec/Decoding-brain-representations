@@ -76,40 +76,38 @@ P(**x** | **y**) ~ P(**y** | **x**) * P(**x**)
 
 Here P(**y** | **x**) is called the likelihood: how likely is a particular response given that the stimulus was a particular image and P(x) is called the prior: how like is x For example, in this context, a face image or a white noise image will be extremely unlikely to be observed however, a letter will be quite likely and a digit will be extremely likely.
 
-Now, we have to define what P(**y** | **x**) and P(**x**) are. We assume that they are multivariate normal distributions.
+We will assume that the likelihood and the prior are multivariate Gaussian distributions. A Guassian is characterized by two parameters: a mean vector and a covraiance matrix.
 
+In the case of the liklihood, the mean of the Gaussian is given by **B'** **x** and its covariance matrix is given by diag(E[||**y** - **B'** **x**|| ^ 2]). As before, we can estimate **B** with ridge regression. That is:
 
+**B** = (**X**_training' **X**_training + lambda **I**) ^ -1 **X**_training' **Y**_training'
 
-N(X)
+In the case of the prior, the mean of the Gaussian is given by **0** and its covariance matrix is given by **X**_prior' * **X**_prior / (n_prior - 1).
 
-It turns out that the product of two Gaussians is another Gaussian with the following parameters:
+- Estimate **B**. Normally, you should use cross validation to estimate lambda and Sigma_liklihood. For simplicity, you can assume that lambda = 10 ^ -6 and Sigma_liklihood = 10 ^ -3 * **I**.
+- Estimate **Sigma**_prior.
+Tip: regularize Sigma_prior by adding lambda to its diagonal).
+- Visualize Sigma_prior (tip: you can use imagesc function).
 
-mean
-sigma
+Now, we can obtain the posterior by multiplying the likelihood and the prior. It turns out that the product of two Gaussians is another Gaussian with the following parameters:
+
+**mu**_posterior = 
+**Sigma**_posterior = 
+
+We are almost done. We can start reconstructing stimuli from responses if we can answer the following question:
 
 What value of x maximizes P(x | y) = N_x(mu, Sigma)?
 
-x = mu
+.
+.
+.
+.
+.
+.
 
-Having defined everything, we can finally reconstruct x from y, which is just the mean of P(x | y) = N_x(mu, Sigma)
+**mu**\_posterior = argmax_**x** P(**x** | **y**)
 
-- Estimate **B** on the training set.
-
-
-## Task
-
-- Estimate **B** on the training set.
-
-## Task
-
-- Estimate the parameters of the likelihood.  
-Tip: Normally, you should use cross validation to estimate lambda and Sigma_liklihood. For simplicity, you can assume that lambda = 10 ^ -6 and Sigma_liklihood = 10 ^ -3 * **I**.
-
-## Task
-
-- Estimate the parameters of the prior.  
-Tip: regularize Sigma_prior by adding lambda to its diagonal).
-- Visualize Sigma_prior (tip: you can use imagesc function).
+which was our goal! We can now plug any response in the above equation and reconstruct the most probable stimulus that could have caused that response.
 
 ## Task
 
@@ -117,21 +115,4 @@ Tip: regularize Sigma_prior by adding lambda to its diagonal).
 - Visualize the reconstructions (tip: you can use reshape and imshow/imagesc functions).
 - Compare the reconstructions with the earlier reconstructions.
 
-
-However, we will not use this approach. Rather, we will use a *generative* model, which predicts **y** as a function of **x** (i.e., **y** = f(**x**)).
-
-
-Our goal is finding the most likely **x** given **y**. In other words:
-
-argmax_**x** P(**x** | **y**)
-
-Let's break this down.
-
-P(**x** | **y**) is the encoding distribution (the posterior), which gives the probability that the stimulus 
-
-
-
-P(**x** | **y**) ~ P(**y** | **x**) * P(**x**)
-
-
-
+Congratulations, you have reached the end!
