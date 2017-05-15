@@ -84,21 +84,17 @@ In the case of the prior, the mean of the Gaussian is given by **0** and its cov
 
 ## Task
 
-- Estimate **B**. Normally, you should use cross validation to estimate lambda and Sigma_liklihood. For simplicity, you can assume that lambda = 10 ^ -6 and Sigma_liklihood = 10 ^ -3 * **I**.
-- Estimate **Sigma**_prior.
-Tip: regularize Sigma_prior by adding lambda to its diagonal).
-- Visualize Sigma_prior (tip: you can use imagesc function).
+- Estimate **B**. Tip: Normally, you should use cross-validation to estimate lambda and Sigma_liklihood. For simplicity, you can assume that lambda = 10 ^ -6 and Sigma_liklihood = 10 ^ -3 **I**.
+- Estimate **Sigma**\_prior. Tip: Add 10 ^ -6 to the diagonal of Sigma_prior).
+- Visualize Sigma_prior Tip: you can use imagesc function.
 
 ---
 
-Now, we can obtain the posterior by multiplying the likelihood and the prior. It turns out that the product of two Gaussians is another Gaussian with the following parameters:
-
-**mu**_posterior = 
-**Sigma**_posterior = 
+Now, we can obtain the posterior by multiplying the likelihood and the prior. It turns out that the product of two Gaussians is another Gaussian whose mean vector is given by:
 
 We are almost done. We can start reconstructing stimuli from responses if we can answer the following question:
 
-What value of x maximizes P(x | y) = N_x(mu, Sigma)?
+Question: What **x** maximizes P(**x** | **y**) considerig that P(**x** | **y**) is a Guassian?
 
 .  
 .  
@@ -107,9 +103,13 @@ What value of x maximizes P(x | y) = N_x(mu, Sigma)?
 .  
 .  
 
+Answer: **mu**\_posterior
+
+which was our goal! That is:
+ 
 **mu**\_posterior = argmax_**x** P(**x** | **y**)
 
-which was our goal! We can now plug any response in the above equation and reconstruct the most probable stimulus that could have caused that response.
+We can now plug any **y** in the above equation and reconstruct the most probable **x** that could have caused it.
 
 ## Task
 
