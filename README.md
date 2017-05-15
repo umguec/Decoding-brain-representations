@@ -1,44 +1,42 @@
 # Decoding-brain-representations
 DONDERS (f)MRI TOOL-KIT: From Image Acquisition to Computation Model
 
-The dataset contains fMRI data acquired from the early visual cortex of one subject
+In this hands-on session, you will implement a neural decoder for reconstructing stimuli from responses. We will use a dataset, which was used in the following papers:
 
-In this hands-on session, you will implement neural decoder that can reconstruct the percieved stimuli from observed brain responses.
+[1]
+[2]
+[3]
+[4]
+
 
 A brief sketch of the approach
 
 We use **x** and **y** for reffering to a stimulus-response pair, where **x** is a vector of pixels, and **y** is a vector of voxels.
 
-
+The dataset contains fMRI data acquired from the early visual cortex of one subject while the subject was presented with grayscale images of handwritten sixes and nines.
 
 Let's first familiarize ourselves with the dataset. It containes a number of variables:
 
-X -> This is a 100 x 784 matrix. The ith row contains the pixel values that were presented in the ith trial.
-Y -> This is a 100 x 3092 matrix. The ith contains the voxel values that were measured in the ith trial.
+X -> This is a 100 x 784 matrix. The ith row contains the pixel values of the stimulus that was presented in the ith trial of the experiment.
+
+Y -> This is a 100 x 3092 matrix. The ith row contains the voxel values of the responses that were measured in the ith trial of the experiment.
 
 and
 
-X_prior -> This is a 2000 x 784 matrix. Each row contains the pixel values of a different stimuli, which was not used in the experiment.
+X_prior -> This is a 2000 x 784 matrix. Each row contains the pixel values of a different stimulus, which was not used in the experiment.
 
-
-## Task
-
-- Visualize some of the stimuli.
-
+Note that the trials are not in their original order.
 
 Let's prepare the dataset for analysis. We 
 
-
 ## Task
-
 
 - Split X and Y in two parts called X_training and X_test, and Y_training and Y_test.
-- Visualize some of the stimuli.
+- Visualize some of the stimuli in the training set, test set and the prior set. Tip: You can use reshape and imshow/imagesc functions.
 
+---
 
-## Task
-
-Recall that our goal is to solve the problem of reconstructing stimuli (**x**) from responses (**y**).
+Recall that our goal is to solve the problem of reconstructing **x** from **y**.
 
 One possible approach to solve this problem is to use a *discriminative* model, which predicts **x** as a function of **y**. That is:
 
@@ -50,23 +48,23 @@ We will assume that f is a linear function. That is:
 
 We can estimate **B** with ridge regression. That is:
 
-**B** = (**X**_training' **X**_training + lambda **I**) ^ -1 **X**_training' **Y**_training'
+**B** = (**Y**_training' **Y**_training + lambda **I**) ^ -1 **Y**_training' **X**_training'
 
-where lambda is the regularization coefficient and **I** is the identity matrix.
+where lambda is the regularization coefficient, **I** is the *p* x *p* identity matrix, and *p* is the number of voxels.
 
 Note that we can safely ignore the intercept since we normalized our data to have zero mean and unit variance.
 
-- Estimate **B**. Normally, you should use cross validation to estimate lambda. For simplicity, you can assume that lambda = 10 ^ -6.
-- Reconstruct the **X**_test from **Y**_test.
-- Visualize some of the reconstructions.
+## Task
+
+- Estimate **B**. Tip: Normally, you should use cross validation to estimate lambda. For simplicity, you can assume that lambda = 10 ^ -6.
+- Reconstruct **X**_test from **Y**_test.
+- Visualize some of the reconstructions. Tip: You can use reshape and imshow/imagesc functions.
+
+---
 
 As you can see, the results are not very good. One reason is that we are trying to find the solution among all 28 x 28 images. That is we are not contraining the solution by using our prior knowledge that the reconstructions will have a particular form (i.e., handwritten digits). 
 
-## Task
-
-To do this, we have to resort to probability theory.
-
-From a probabilistic context, our Our goal is to solve the problem of preciting **x** given **y** can be formulated as finding the most likely x given y. That is,
+To do this, we have to resort to probability theory. We reformulate our goal as finding the most probable **x** that could have caused **y**. That is:
 
 argmax_**x** P(**x** | **y**)
 
@@ -98,12 +96,12 @@ We are almost done. We can start reconstructing stimuli from responses if we can
 
 What value of x maximizes P(x | y) = N_x(mu, Sigma)?
 
-.
-.
-.
-.
-.
-.
+.  
+.  
+.  
+.  
+.  
+.  
 
 **mu**\_posterior = argmax_**x** P(**x** | **y**)
 
