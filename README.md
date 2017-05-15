@@ -76,11 +76,27 @@ Here P(**y** | **x**) is called the likelihood: how likely is a particular respo
 
 We will assume that the likelihood and the prior are multivariate Gaussian distributions. A Guassian is characterized by two parameters: a mean vector and a covraiance matrix.
 
-In the case of the liklihood, the mean of the Gaussian is given by **B'** **x** and its covariance matrix is given by diag(E[||**y** - **B'** **x**|| ^ 2]). As before, we can estimate **B** with ridge regression. That is:
+In the case of the liklihood, the mean of the Gaussian is given by:
+
+**mu**\_likelihood = ***B'** **x**
+
+As before, we can estimate **B** with ridge regression:
 
 **B** = (**X**_training' **X**_training + lambda **I**) ^ -1 **X**_training' **Y**_training'
 
-In the case of the prior, the mean of the Gaussian is given by **0** and its covariance matrix is given by **X**_prior' * **X**_prior / (n_prior - 1).
+The covariance matrix of the likelihood is given by:
+
+**Sigma**_\likelihood = diag(E[||**y** - **B'** **x**|| ^ 2]). 
+
+In the case of the prior, the mean of the Gaussian is given by:
+
+mu_prior = **0** (which is a vector of zeros)
+
+The covariance matrix of the prior is given by:
+
+**X**_prior' * **X**_prior / (n - 1)
+
+where n is the number of elements in the prior set.
 
 ## Task
 
