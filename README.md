@@ -1,7 +1,7 @@
 # Decoding-brain-representations
 DONDERS (f)MRI TOOL-KIT: From Image Acquisition to Computation Model
 
-In this hands-on session, you will implement a neural decoder for reconstructing percieved stimuli from observed responses. We will used the dataset that was used in the following papers:
+In this hands-on session, you will implement a neural decoder for reconstructing stimuli from responses. We will be using the dataset that was previously used in the following papers:
 
 [1]  
 [2]  
@@ -10,13 +10,13 @@ In this hands-on session, you will implement a neural decoder for reconstructing
 
 The papers can be found in the ./papers folder. You can refer to them for more details on the dataset and the method.
 
-The dataset contains fMRI data acquired from the early visual cortex of one subject while the subject was presented with grayscale images of handwritten sixes and nines.
+The dataset contains fMRI data acquired from the early visual cortex of one subject as the subject was presented with 100 grayscale images of handwritten sixes and nines (50 sixes and 50 nines). The fMRI data has been realigned and slice time corrected. Furthermore, stimulus specific response amplitudes have been estimated with a general linear model.
 
 Let's first familiarize ourselves with the dataset. It containes a number of variables:
 
-X -> This is a 100 x 784 matrix. The *i*th row contains the pixel values of the stimulus that was presented in the ith trial of the experiment. Note that the stimuli are 28 pixel x 28 pixel images, which were reshaped to 1 x 784 vectors.
+X -> This is a 100 x 784 matrix. The *i*th row contains the pixel values of the stimulus that was presented in the *i*th trial of the experiment. Note that the stimuli are 28 pixel x 28 pixel images, which were reshaped to 1 x 784 vectors.
 
-Y -> This is a 100 x 3092 matrix. The *i*th row contains the voxel values of the responses that were measured in the ith trial of the experiment.
+Y -> This is a 100 x 3092 matrix. The *i*th row contains the voxel values of the responses that were measured in the *i*th trial of the experiment.
 
 and
 
@@ -26,7 +26,7 @@ X_prior -> This is a 2000 x 784 matrix. Each row contains the pixel values of a 
 
 - Visualize some of the stimuli in the training set, test set and the prior set. Tip: You can use reshape and imshow/imagesc functions.
 - Normalize X and Y to have zero mean and unit variance. Tip: Recall that normalization means subtracting the mean of each pixel/voxel from itself and dividng it by its standard deviation. You can use mean and std functions, or zscore function.
-- Split X and Y in two parts called X_training and X_test, and Y_training and Y_test.
+- Split X and Y in two parts called X_training and X_test, and Y_training and Y_test. The training set should contain 80 stimulus-response pairs (40 pairs for sixes and 40 pairs nines). The test set should contain 20 stimulus-response pairs (10 pairs for sixes and 10 pairs for nines).
 
 (The solution of the task is provided in task_1.m. However, it is recommended that you try to solve the task by youself before referring to the solution.)
 
