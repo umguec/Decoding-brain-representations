@@ -106,11 +106,13 @@ where n is the number of elements in the prior set.
 
 ---
 
-Now, we can obtain the posterior by multiplying the likelihood and the prior. It turns out that the product of two Gaussians is another Gaussian whose mean vector is given by:
+Now, we can derive the posterior by multiplying the likelihood and the prior. It turns out that the product of two Gaussians is another Gaussian whose mean vector is given by:
 
-We are almost done. We can start reconstructing stimuli from responses if we can answer the following question:
+**mu**_posterior = ...
 
-Question: What **x** maximizes P(**x** | **y**) considerig that P(**x** | **y**) is a Guassian?
+We are almost done. Recall that we want to find **x** that maximixes the posterior. We can start reconstructing stimuli from responses if we can answer the following question:
+
+Question: What **x** maximizes P(**x** | **y**) considerig that P(**x** | **y**) is a Gaussian?
 
 .  
 .  
@@ -119,7 +121,7 @@ Question: What **x** maximizes P(**x** | **y**) considerig that P(**x** | **y**)
 .  
 .  
 
-Answer: **mu**\_posterior
+The answer is its mean vector.
 
 which was our goal! That is:
  
@@ -129,8 +131,8 @@ We can now plug any **y** in the above equation and reconstruct the most probabl
 
 ## Task
 
-- Reconstruct the stimuli from responses in the test set.
-- Visualize the reconstructions (tip: you can use reshape and imshow/imagesc functions).
+- Reconstruct the stimuli from the responses in the test set.
+- Visualize some of the reconstructions. Tip: You can use reshape function, and imshow or imagesc functions.
 - Compare the reconstructions with the earlier reconstructions.
 
 (The solution of the task is provided in *task_4.m*. However, it is recommended that you try to solve the task by youself before referring to the solution.)
