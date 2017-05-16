@@ -80,21 +80,21 @@ In the case of the liklihood, the mean of the Gaussian is given by:
 
 As before, we can estimate **B** with ridge regression:
 
-**B** = (**X**_training' **X**_training + lambda **I**) ^ -1 **X**_training' **Y**_training'
+**B** = (**X**\_training' **X**\_training + lambda **I**) ^ -1 **X**\_training' **Y**\_training'
 
 The covariance matrix of the likelihood is given by:
 
-**Sigma**_\likelihood = diag(E[||**y** - **B'** **x**|| ^ 2]). 
+-- **Sigma**_\likelihood = diag(E[||**y** - **B'** **x**|| ^ 2]). 
 
 In the case of the prior, the mean of the Gaussian is given by:
 
-**mu**\_prior = **0** (which is a vector of zeros)
+-- **mu**\_prior = **0** (which is a vector of zeros)
 
 The covariance matrix of the prior is given by:
 
-**Sigma**\_prior = **X**_prior' * **X**_prior / (n - 1)
+-- **Sigma**\_prior = **X**\_prior' * **X**\_prior / (n - 1)
 
-where n is the number of elements in the prior set.
+where n is the length of **X**\_prior.
 
 ## Task 3
 
