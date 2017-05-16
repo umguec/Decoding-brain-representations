@@ -1,16 +1,14 @@
 # Decoding-brain-representations
 DONDERS (f)MRI TOOL-KIT: From Image Acquisition to Computation Model
 
-In this hands-on session, you will implement a neural decoder for reconstructing percieved stimuli from observed responses. We will use a part of the fMRI dataset that was used in the following papers:
+In this hands-on session, you will implement a neural decoder for reconstructing percieved stimuli from observed responses. We will used the dataset that was used in the following papers:
 
 [1]  
 [2]  
 [3]  
 [4]  
 
-A brief sketch of the approach
-
-We use **x** and **y** for reffering to a stimulus-response pair, where **x** is a vector of pixels, and **y** is a vector of voxels.
+The papers can be found in the ./papers folder. You can refer to them for more details on the dataset and the method.
 
 The dataset contains fMRI data acquired from the early visual cortex of one subject while the subject was presented with grayscale images of handwritten sixes and nines.
 
