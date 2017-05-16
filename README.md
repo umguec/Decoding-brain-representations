@@ -88,11 +88,11 @@ The covariance matrix of the likelihood is given by:
 
 In the case of the prior, the mean of the Gaussian is given by:
 
-mu_prior = **0** (which is a vector of zeros)
+**mu**\_prior = **0** (which is a vector of zeros)
 
 The covariance matrix of the prior is given by:
 
-**X**_prior' * **X**_prior / (n - 1)
+**Sigma**\_prior = **X**_prior' * **X**_prior / (n - 1)
 
 where n is the number of elements in the prior set.
 
