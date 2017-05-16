@@ -28,11 +28,11 @@ X_prior -> This is a 2000 x 784 matrix. Each row contains the pixel values of a 
 - Normalize X and Y to have zero mean and unit variance. Tip: Recall that normalization means subtracting the mean of each pixel/voxel from itself and dividng it by its standard deviation. You can use mean and std functions, or zscore function.
 - Split X and Y in two parts called X_training and X_test, and Y_training and Y_test. The training set should contain 80 stimulus-response pairs (40 pairs for sixes and 40 pairs nines). The test set should contain 20 stimulus-response pairs (10 pairs for sixes and 10 pairs for nines).
 
-(The solution of the task is provided in task_1.m. However, it is recommended that you try to solve the task by youself before referring to the solution.)
+(The solution of the task is provided in *task_1.m*. However, it is recommended that you try to solve the task by youself before referring to the solution.)
 
 ---
 
-Recall that our goal is to solve the problem of reconstructing **x** from **y**.
+Recall that our goal is to solve the problem of reconstructing stimuli from responses. In the remainder of this document, **x** will refer to stimuli, and **y** will refer to responses.
 
 One possible approach to solve this problem is to use a *discriminative* model, which predicts **x** as a function of **y**. That is:
 
@@ -50,15 +50,17 @@ where lambda is the regularization coefficient, **I** is the *p* x *p* identity 
 
 Note that we can safely ignore the intercept since we normalized our data to have zero mean and unit variance.
 
-## Task
+## Task 2
 
-- Estimate **B**. Tip: Normally, you should use cross validation to estimate lambda. For simplicity, you can assume that lambda = 10 ^ -6.
-- Reconstruct **X**_test from **Y**_test.
+- Estimate **B** on the training set. Tip: Normally, you should use cross validation to estimate lambda. For simplicity, you can assume that lambda = 10 ^ -6.
+- Reconstruct the stimuli from the responses in the test set.
 - Visualize some of the reconstructions. Tip: You can use reshape function, and imshow or imagesc functions.
+
+(The solution of the task is provided in *task_2.m*. However, it is recommended that you try to solve the task by youself before referring to the solution.)
 
 ---
 
-As you can see, the results are not very good. One reason is that we are trying to find the solution among all 28 x 28 images. That is we are not contraining the solution by using our prior knowledge that the reconstructions will have a particular form (i.e., handwritten digits). 
+As you can see, the results are not very good. One reason is that we are not forcing the reconstructions to be similar to handwritten digits even though we know that they should be similar to handwritten digits.
 
 To do this, we have to resort to probability theory. We reformulate our goal as finding the most probable **x** that could have caused **y**. That is:
 
@@ -94,11 +96,13 @@ The covariance matrix of the prior is given by:
 
 where n is the number of elements in the prior set.
 
-## Task
+## Task 3
 
-- Estimate **B**. Tip: Normally, you should use cross-validation to estimate lambda and Sigma_liklihood. For simplicity, you can assume that lambda = 10 ^ -6 and Sigma_liklihood = 10 ^ -3 **I**.
-- Estimate **Sigma**\_prior. Tip: Add 10 ^ -6 to the diagonal of Sigma_prior).
-- Visualize Sigma_prior Tip: you can use imagesc function.
+- Estimate **B** on the training set. Tip: Normally, you should use cross-validation to estimate lambda and Sigma_liklihood. For simplicity, you can assume that lambda = 10 ^ -6 and Sigma_liklihood = 10 ^ -3 **I**.
+- Estimate **Sigma**\_prior. Tip: Add 10 ^ -6 to the diagonal of Sigma_prior for regularization.
+- Visualize Sigma_prior. Tip: you can use imagesc function.
+
+(The solution of the task is provided in *task_3.m*. However, it is recommended that you try to solve the task by youself before referring to the solution.)
 
 ---
 
@@ -128,6 +132,8 @@ We can now plug any **y** in the above equation and reconstruct the most probabl
 - Reconstruct the stimuli from responses in the test set.
 - Visualize the reconstructions (tip: you can use reshape and imshow/imagesc functions).
 - Compare the reconstructions with the earlier reconstructions.
+
+(The solution of the task is provided in *task_4.m*. However, it is recommended that you try to solve the task by youself before referring to the solution.)
 
 ---
 
