@@ -5,7 +5,7 @@ In this hands-on session, you will implement a neural decoder for reconstructing
 
 The dataset contains fMRI data acquired from the early visual cortex of one subject as the subject was presented with 100 grayscale images of handwritten sixes and nines (50 sixes and 50 nines). The fMRI data has been realigned and slice time corrected. Furthermore, stimulus specific response amplitudes have been estimated with a general linear model.
 
-Let's first familiarize ourselves with the dataset. It containes a number of variables:
+Let's first familiarize ourselves with the dataset. It contains a number of variables:
 
 **X** -> This is a 100 x 784 matrix. The *i*th row contains the pixel values of the stimulus that was presented in the *i*th trial of the experiment. Note that the stimuli are 28 pixel x 28 pixel images, which were reshaped to 1 x 784 vectors.
 
@@ -19,10 +19,10 @@ and
 
 - Load the dataset.
 - Visualize some of the stimuli. Tip: You can use reshape and imagesc functions.
-- Normalize X and Y to have zero mean and unit variance. Tip: Recall that normalization means subtracting the mean of each pixel/voxel from itself and dividng it by its standard deviation. You can use zscore function.
+- Normalize X and Y to have zero mean and unit variance. Tip: Recall that normalization means subtracting the mean of each pixel/voxel from itself and dividing it by its standard deviation. You can use zscore function.
 - Split X and Y in two parts called X_training and X_test, and Y_training and Y_test. The training set should contain 80 stimulus-response pairs (40 pairs for sixes and 40 pairs for nines). The test set should contain 20 stimulus-response pairs (10 pairs for sixes and 10 pairs for nines).
 
-(The solution of the task is provided in *./solutions/task_1.m*. However, it is recommended that you try to solve the task by youself before referring to the solution.)
+(The solution of the task is provided in *./solutions/task_1.m*. However, it is recommended that you try to solve the task by yourself before referring to the solution.)
 
 ---
 
@@ -54,7 +54,7 @@ Note that we can safely ignore the intercept since we normalized our data to hav
 - Reconstruct **x** from **y** in the test set.
 - Visualize the reconstructions. Tip: You can use reshape and imagesc functions.
 
-(The solution of the task is provided in *./solutions/task_2.m*. However, it is recommended that you try to solve the task by youself before referring to the solution.)
+(The solution of the task is provided in *./solutions/task_2.m*. However, it is recommended that you try to solve the task by yourself before referring to the solution.)
 
 ---
 
@@ -74,9 +74,9 @@ P(**x** | **y**) ~ P(**y** | **x**) * P(**x**)
 
 where P(**y** | **x**) is called the likelihood and P(x) is called the prior.
 
-We will assume that the likelihood and the prior are multivariate Gaussian distributions. A Guassian is characterized by two parameters: a mean vector and a covraiance matrix.
+We will assume that the likelihood and the prior are multivariate Gaussian distributions. A Gaussian is characterized by two parameters: a mean vector and a covariance matrix.
 
-In the case of the liklihood, the mean of the Gaussian is given by:
+In the case of the likelihood, the mean of the Gaussian is given by:
 
 --> **mu**\_likelihood = **B'** **x**
 
@@ -102,11 +102,11 @@ where n is the length of **X**\_prior.
 
 ## Task 3
 
-- Estimate **B** on the training set. Tip: Normally, you should use cross-validation to estimate lambda and Sigma_liklihood. For simplicity, you can assume that lambda = 10 ^ -6 and Sigma_liklihood = 10 ^ -3 **I**.
+- Estimate **B** on the training set. Tip: Normally, you should use cross-validation to estimate lambda and Sigma_likelihood. For simplicity, you can assume that lambda = 10 ^ -6 and Sigma_likelihood = 10 ^ -3 **I**.
 - Estimate **Sigma**\_prior. Tip: Add 10 ^ -6 to the diagonal of Sigma_prior for regularization.
 - Visualize **Sigma**\_prior. Can you explain what it shows? Tip: you can use imagesc function.
 
-(The solution of the task is provided in *./solutions/task_3.m*. However, it is recommended that you try to solve the task by youself before referring to the solution.)
+(The solution of the task is provided in *./solutions/task_3.m*. However, it is recommended that you try to solve the task by yourself before referring to the solution.)
 
 ---
 
@@ -139,7 +139,7 @@ Now, we can plug any **y** in the above equation and reconstruct the most probab
 - Visualize the reconstructions. Tip: You can use reshape and imagesc functions.
 - Compare the reconstructions with the earlier reconstructions. Which one is better? Why? Can you think of ways to improve the results?
 
-(The solution of the task is provided in *./solutions/task_4.m*. However, it is recommended that you try to solve the task by youself before referring to the solution.)
+(The solution of the task is provided in *./solutions/task_4.m*. However, it is recommended that you try to solve the task by yourself before referring to the solution.)
 
 ---
 
