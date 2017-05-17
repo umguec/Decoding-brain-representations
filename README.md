@@ -32,7 +32,9 @@ X_prior -> This is a 2000 x 784 matrix. Each row contains the pixel values of a 
 
 ---
 
-Recall that our goal is to solve the problem of reconstructing stimuli from responses. In the remainder of this document, **x** will refer to stimuli, and **y** will refer to responses.
+Note: In the remainder of this document, we will use **x** for referring to stimuli and **y** for referring to responses.
+
+Our goal is to solve the problem of reconstructing **x** from **y**.
 
 One possible approach to solve this problem is to use a *discriminative* model, which predicts **x** as a function of **y**. That is:
 
