@@ -8,7 +8,7 @@ In this hands-on session, you will implement a neural decoder for reconstructing
 [3]  
 [4]  
 
-The papers can be found in the ./papers folder. You can refer to them for more details on the dataset and the method.
+The papers can be found in the ./papers folder. You can refer them for more details on the dataset and the method.
 
 The dataset contains fMRI data acquired from the early visual cortex of one subject as the subject was presented with 100 grayscale images of handwritten sixes and nines (50 sixes and 50 nines). The fMRI data has been realigned and slice time corrected. Furthermore, stimulus specific response amplitudes have been estimated with a general linear model.
 
@@ -24,7 +24,7 @@ X_prior -> This is a 2000 x 784 matrix. Each row contains the pixel values of a 
 
 ## Task 1
 
-- Visualize some of the stimuli in the training set, test set and the prior set. Tip: You can use reshape and imshow/imagesc functions.
+- Visualize some of the stimuli. Tip: You can use reshape function, and imshow or imagesc functions.
 - Normalize X and Y to have zero mean and unit variance. Tip: Recall that normalization means subtracting the mean of each pixel/voxel from itself and dividng it by its standard deviation. You can use mean and std functions, or zscore function.
 - Split X and Y in two parts called X_training and X_test, and Y_training and Y_test. The training set should contain 80 stimulus-response pairs (40 pairs for sixes and 40 pairs nines). The test set should contain 20 stimulus-response pairs (10 pairs for sixes and 10 pairs for nines).
 
