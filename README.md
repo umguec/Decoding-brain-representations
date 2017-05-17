@@ -106,11 +106,11 @@ where n is the length of **X**\_prior.
 
 ---
 
-Having defined the likelihhod and the prior as Gaussians, we can derive the posterior by multiplying them. It turns out that the product of two Gaussians is another Gaussian whose mean vector is given by:
+Having defined the likelihood and the prior as Gaussians, we can derive the posterior by multiplying them. It turns out that the product of two Gaussians is another Gaussian, whose mean vector is given by:
 
 **mu**_posterior = ...
 
-Recall that we formulated the reconstruction as the argument that maximixes the posterior, which we derived to be a Gaussian. We will be done once we answer the following question:
+We are almost done. Recall that the reconstruction of **x** from **y** is the argument that maximizes the posterior, which we derived to be a Gaussian. We will be completely done once we answer the following question:
 
 Question: What is the argument that maximizes a Gaussian?
 
@@ -121,13 +121,13 @@ Question: What is the argument that maximizes a Gaussian?
 .  
 .  
 
-The answer is its mean vector.
-
-We can now plug any **y** in the below equation and reconstruct the most probable **x** that could have caused it.
+The answer is its mean vector, which is the solution of our initial problem. That is:
 
 argmax_**x** P(**x** | **y**) =
 **mu**\_posterior =
 ...
+
+Now, we can plug any **y** in the above equation and reconstruct the most probable **x** that could have caused it.
 
 ## Task 4
 
