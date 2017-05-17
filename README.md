@@ -79,7 +79,7 @@ We will assume that the likelihood and the prior are multivariate Gaussian distr
 
 In the case of the liklihood, the mean of the Gaussian is given by:
 
-**mu**\_likelihood = ***B'** **x**
+-- **mu**\_likelihood = **B'** **x**
 
 As before, we can estimate **B** with ridge regression:
 
@@ -144,4 +144,6 @@ Now, we can plug any **y** in the above equation and reconstruct the most probab
 
 ---
 
-Congratulations, you have reached the end!
+Congratulations, you have reached the end! If everything went according to the plan, you should have visualized figures like the following:
+
+
