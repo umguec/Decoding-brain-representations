@@ -29,11 +29,11 @@ X_prior -> This is a 2000 x 784 matrix. Each row contains the pixel values of a 
 - Normalize X and Y to have zero mean and unit variance. Tip: Recall that normalization means subtracting the mean of each pixel/voxel from itself and dividng it by its standard deviation. You can use bsxfun, mean and std functions, or zscore function.
 - Split X and Y in two parts called X_training and X_test, and Y_training and Y_test. The training set should contain 80 stimulus-response pairs (40 pairs for sixes and 40 pairs for nines). The test set should contain 20 stimulus-response pairs (10 pairs for sixes and 10 pairs for nines).
 
-(The solution of the task is provided in *task_1.m*. However, it is recommended that you try to solve the task by youself before referring to the solution.)
+(The solution of the task is provided in *./solutions/task_1.m*. However, it is recommended that you try to solve the task by youself before referring to the solution.)
 
 ---
 
-Note: In the remainder of this document, we will use **x** for referring to stimuli and **y** for referring to responses.
+Note: In the remainder of this document, we will use **x** for referring to a 784 x 1 stimulus vector and **y** for referring to a 3092 x 1 response vector.
 
 Our goal is to solve the problem of reconstructing **x** from **y**.
 
@@ -47,7 +47,7 @@ We will assume that f is a linear function. That is:
 
 We can estimate **B** with ridge regression. That is:
 
-**B** = (**Y**_training' **Y**_training + lambda **I**) ^ -1 **Y**_training' **X**_training'
+**B** = (**Y**\_training' **Y**\_training + lambda **I**) ^ -1 **Y**\_training' **X**\_training
 
 where lambda is the regularization coefficient, **I** is the *q* x *q* identity matrix, and *q* is the number of voxels.
 
@@ -59,7 +59,7 @@ Note that we can safely ignore the intercept since we normalized our data to hav
 - Reconstruct **x** from **y** in the test set.
 - Visualize the reconstructions. Tip: You can use reshape function, and imshow or imagesc functions.
 
-(The solution of the task is provided in *task_2.m*. However, it is recommended that you try to solve the task by youself before referring to the solution.)
+(The solution of the task is provided in *./solutions/task_2.m*. However, it is recommended that you try to solve the task by youself before referring to the solution.)
 
 ---
 
@@ -83,7 +83,7 @@ In the case of the liklihood, the mean of the Gaussian is given by:
 
 As before, we can estimate **B** with ridge regression:
 
-**B** = (**X**\_training' **X**\_training + lambda **I**) ^ -1 **X**\_training' **Y**\_training'
+**B** = (**X**\_training' **X**\_training + lambda **I**) ^ -1 **X**\_training' **Y**\_training
 
 where lambda is the regularization coefficient, I is the *p* x *p* identity matrix, and *p* is the number of pixels.
 
@@ -107,7 +107,7 @@ where n is the length of **X**\_prior.
 - Estimate **Sigma**\_prior. Tip: Add 10 ^ -6 to the diagonal of Sigma_prior for regularization.
 - Visualize **Sigma**\_prior. Tip: you can use imagesc function.
 
-(The solution of the task is provided in *task_3.m*. However, it is recommended that you try to solve the task by youself before referring to the solution.)
+(The solution of the task is provided in *./solutions/task_3.m*. However, it is recommended that you try to solve the task by youself before referring to the solution.)
 
 ---
 
@@ -140,7 +140,7 @@ Now, we can plug any **y** in the above equation and reconstruct the most probab
 - Visualize the reconstructions. Tip: You can use reshape function, and imshow or imagesc functions.
 - Compare the reconstructions with the earlier reconstructions.
 
-(The solution of the task is provided in *task_4.m*. However, it is recommended that you try to solve the task by youself before referring to the solution.)
+(The solution of the task is provided in *./solutions/task_4.m*. However, it is recommended that you try to solve the task by youself before referring to the solution.)
 
 ---
 
