@@ -18,7 +18,7 @@ and
 ## Task 1
 
 - Load the dataset.
-- Visualize some of the stimuli. Tip: You can use reshape function, and imshow or imagesc functions.
+- Visualize some of the stimuli. Tip: You can use reshape and imagesc functions.
 - Normalize X and Y to have zero mean and unit variance. Tip: Recall that normalization means subtracting the mean of each pixel/voxel from itself and dividng it by its standard deviation. You can use zscore function.
 - Split X and Y in two parts called X_training and X_test, and Y_training and Y_test. The training set should contain 80 stimulus-response pairs (40 pairs for sixes and 40 pairs for nines). The test set should contain 20 stimulus-response pairs (10 pairs for sixes and 10 pairs for nines).
 
@@ -52,7 +52,7 @@ Note that we can safely ignore the intercept since we normalized our data to hav
 
 - Estimate **B** on the training set. Tip: Normally, you should use cross validation to estimate lambda. For simplicity, you can assume that lambda = 10 ^ -6.
 - Reconstruct **x** from **y** in the test set.
-- Visualize the reconstructions. Tip: You can use reshape function, and imshow or imagesc functions.
+- Visualize the reconstructions. Tip: You can use reshape and imagesc functions.
 
 (The solution of the task is provided in *./solutions/task_2.m*. However, it is recommended that you try to solve the task by youself before referring to the solution.)
 
@@ -108,7 +108,7 @@ where n is the length of **X**\_prior.
 
 Having defined the likelihood and the prior as Gaussians, we can derive the posterior by multiplying them. It turns out that the product of two Gaussians is another Gaussian, whose mean vector is given by:
 
-**mu**\_posterior = ...
+**mu**\_posterior = inv(inv(**Sigma**\_prior) + **B** inv(**Sigma**\_likelihood) **B**') **B** * inv(**Sigma**\_likelihood) **y**
 
 We are almost done. Recall that the reconstruction of **x** from **y** is the argument that maximizes the posterior, which we derived to be a Gaussian. We will be completely done once we answer the following question:
 
@@ -125,14 +125,14 @@ The answer is its mean vector, which is the solution of our initial problem. Tha
 
 argmax_**x** P(**x** | **y**) =  
 **mu**\_posterior =  
-...
+inv(inv(**Sigma**\_prior) + **B** inv(**Sigma**\_likelihood) **B**') **B** * inv(**Sigma**\_likelihood) **y**
 
 Now, we can plug any **y** in the above equation and reconstruct the most probable **x** that could have caused it.
 
 ## Task 4
 
 - Reconstruct **x** from **y** in the test set.
-- Visualize the reconstructions. Tip: You can use reshape function, and imshow or imagesc functions.
+- Visualize the reconstructions. Tip: You can use reshape and imagesc functions.
 - Compare the reconstructions with the earlier reconstructions. Which one is better? Why? Can you think of ways to improve the results?
 
 (The solution of the task is provided in *./solutions/task_4.m*. However, it is recommended that you try to solve the task by youself before referring to the solution.)
