@@ -7,13 +7,13 @@ The dataset contains fMRI data acquired from the early visual cortex of one subj
 
 Let's first familiarize ourselves with the dataset. It containes a number of variables:
 
-X -> This is a 100 x 784 matrix. The *i*th row contains the pixel values of the stimulus that was presented in the *i*th trial of the experiment. Note that the stimuli are 28 pixel x 28 pixel images, which were reshaped to 1 x 784 vectors.
+**X** -> This is a 100 x 784 matrix. The *i*th row contains the pixel values of the stimulus that was presented in the *i*th trial of the experiment. Note that the stimuli are 28 pixel x 28 pixel images, which were reshaped to 1 x 784 vectors.
 
-Y -> This is a 100 x 3092 matrix. The *i*th row contains the voxel values of the responses that were measured in the *i*th trial of the experiment.
+**Y** -> This is a 100 x 3092 matrix. The *i*th row contains the voxel values of the responses that were measured in the *i*th trial of the experiment.
 
 and
 
-X_prior -> This is a 2000 x 784 matrix. Each row contains the pixel values of a different stimulus, which was not used in the experiment. Note that the stimuli are 28 pixel x 28 pixel images, which were reshaped to 1 x 784 vectors.
+**X**_prior -> This is a 2000 x 784 matrix. Each row contains the pixel values of a different stimulus, which was not used in the experiment. Note that the stimuli are 28 pixel x 28 pixel images, which were reshaped to 1 x 784 vectors.
 
 ## Task 1
 
