@@ -79,7 +79,7 @@ We will assume that the likelihood and the prior are multivariate Gaussian distr
 
 In the case of the liklihood, the mean of the Gaussian is given by:
 
--- **mu**\_likelihood = **B'** **x**
+--> **mu**\_likelihood = **B'** **x**
 
 As before, we can estimate **B** with ridge regression:
 
@@ -89,15 +89,15 @@ where lambda is the regularization coefficient, I is the *p* x *p* identity matr
 
 The covariance matrix of the likelihood is given by:
 
--- **Sigma**_\likelihood = diag(E[||**y** - **B'** **x**|| ^ 2]). 
+--> **Sigma**_\likelihood = diag(E[||**y** - **B'** **x**|| ^ 2]). 
 
 In the case of the prior, the mean of the Gaussian is given by:
 
--- **mu**\_prior = **0** (which is a vector of zeros)
+--> **mu**\_prior = **0** (which is a vector of zeros)
 
 The covariance matrix of the prior is given by:
 
--- **Sigma**\_prior = **X**\_prior' * **X**\_prior / (n - 1)
+--> **Sigma**\_prior = **X**\_prior' * **X**\_prior / (n - 1)
 
 where n is the length of **X**\_prior.
 
@@ -113,7 +113,7 @@ where n is the length of **X**\_prior.
 
 Having defined the likelihood and the prior as Gaussians, we can derive the posterior by multiplying them. It turns out that the product of two Gaussians is another Gaussian, whose mean vector is given by:
 
-**mu**_posterior = ...
+**mu**\_posterior = ...
 
 We are almost done. Recall that the reconstruction of **x** from **y** is the argument that maximizes the posterior, which we derived to be a Gaussian. We will be completely done once we answer the following question:
 
