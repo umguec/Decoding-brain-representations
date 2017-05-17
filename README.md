@@ -58,6 +58,10 @@ Note that we can safely ignore the intercept since we normalized our data to hav
 
 ---
 
+The remaining tasks are considered optional for this hands-on session.
+
+---
+
 Another possible approach to solve the problem of reconstructing **x** from **y** is to use a *generative* model and invert it with Bayesian inference.
 
 We reformulate the problem as finding the most probable **x** that could have caused **y**. That is:
