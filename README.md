@@ -143,8 +143,18 @@ Congratulations, you have reached the end! If everything went according to the p
 
 ### Task 1
 
+![alt text](https://github.com/umuguc/Decoding-brain-representations/raw/master/figures/figure_1.png "Figure 1")
+
 ### Task 2
+
+![alt text](https://github.com/umuguc/Decoding-brain-representations/raw/master/figures/figure_2.png "Figure 2")
+![alt text](https://github.com/umuguc/Decoding-brain-representations/raw/master/figures/figure_3.png "Figure 3")
 
 ### Task 3
 
+![alt text](https://github.com/umuguc/Decoding-brain-representations/raw/master/figures/figure_4.png "Figure 4")
+
 ### Task 4
+
+![alt text](https://github.com/umuguc/Decoding-brain-representations/raw/master/figures/figure_5.png "Figure 5")
+![alt text](https://github.com/umuguc/Decoding-brain-representations/raw/master/figures/figure_6.png "Figure 6")
