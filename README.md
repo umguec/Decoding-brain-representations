@@ -1,7 +1,7 @@
 # Decoding-brain-representations
 DONDERS (f)MRI TOOL-KIT: From Image Acquisition to Computation Model
 
-In this hands-on session, you will implement a neural decoder for reconstructing stimuli from responses. We will be using the dataset that was previously used in the following papers:
+In this hands-on session, you will implement a neural decoder for reconstructing perceived stimuli from brain responses. We will be using the dataset that was previously used in the following papers:
 
 [1]  
 [2]  
@@ -26,7 +26,7 @@ X_prior -> This is a 2000 x 784 matrix. Each row contains the pixel values of a 
 
 - Visualize some of the stimuli. Tip: You can use reshape function, and imshow or imagesc functions.
 - Normalize X and Y to have zero mean and unit variance. Tip: Recall that normalization means subtracting the mean of each pixel/voxel from itself and dividng it by its standard deviation. You can use mean and std functions, or zscore function.
-- Split X and Y in two parts called X_training and X_test, and Y_training and Y_test. The training set should contain 80 stimulus-response pairs (40 pairs for sixes and 40 pairs nines). The test set should contain 20 stimulus-response pairs (10 pairs for sixes and 10 pairs for nines).
+- Split X and Y in two parts called X_training and X_test, and Y_training and Y_test. The training set should contain 80 stimulus-response pairs (40 pairs for sixes and 40 pairs for nines). The test set should contain 20 stimulus-response pairs (10 pairs for sixes and 10 pairs for nines).
 
 (The solution of the task is provided in *task_1.m*. However, it is recommended that you try to solve the task by youself before referring to the solution.)
 
