@@ -63,8 +63,6 @@ Note that we can safely ignore the intercept since we normalized our data to hav
 
 ---
 
-As you can see, the results are not very good. One reason is that we are not forcing the reconstructions to be similar to handwritten digits even though we know that they should be similar to handwritten digits.
-
 To do this, we have to resort to probability theory. We reformulate our goal as finding the most probable **x** that could have caused **y**. That is:
 
 argmax_**x** P(**x** | **y**)
@@ -105,7 +103,7 @@ where n is the length of **X**\_prior.
 
 - Estimate **B** on the training set. Tip: Normally, you should use cross-validation to estimate lambda and Sigma_liklihood. For simplicity, you can assume that lambda = 10 ^ -6 and Sigma_liklihood = 10 ^ -3 **I**.
 - Estimate **Sigma**\_prior. Tip: Add 10 ^ -6 to the diagonal of Sigma_prior for regularization.
-- Visualize **Sigma**\_prior. Tip: you can use imagesc function.
+- Visualize **Sigma**\_prior. Can you explain what it shows? Tip: you can use imagesc function.
 
 (The solution of the task is provided in *./solutions/task_3.m*. However, it is recommended that you try to solve the task by youself before referring to the solution.)
 
@@ -138,12 +136,18 @@ Now, we can plug any **y** in the above equation and reconstruct the most probab
 
 - Reconstruct **x** from **y** in the test set.
 - Visualize the reconstructions. Tip: You can use reshape function, and imshow or imagesc functions.
-- Compare the reconstructions with the earlier reconstructions.
+- Compare the reconstructions with the earlier reconstructions. Which one is better? Why?
 
 (The solution of the task is provided in *./solutions/task_4.m*. However, it is recommended that you try to solve the task by youself before referring to the solution.)
 
 ---
 
-Congratulations, you have reached the end! If everything went according to the plan, you should have visualized figures like the following:
+Congratulations, you have reached the end! If everything went according to the plan, your visualizations should look like the following:
 
+### Task 1
 
+### Task 2
+
+### Task 3
+
+### Task 4
