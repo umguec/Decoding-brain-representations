@@ -37,7 +37,9 @@ Note: In the remainder of this document, we will use **x** for referring to a 78
 
 Our goal is to solve the problem of reconstructing **x** from **y**.
 
-One possible approach to solve this problem is to use a *discriminative* model, which predicts **x** as a function of **y**. That is:
+One possible approach to solve this problem is to use a *discriminative* model.
+
+Discriminative models predict **x** as a function of **y**. That is:
 
 **x** = f(**y**)
 
@@ -63,15 +65,17 @@ Note that we can safely ignore the intercept since we normalized our data to hav
 
 ---
 
-To do this, we have to resort to probability theory. We reformulate our goal as finding the most probable **x** that could have caused **y**. That is:
+Another possible approach to solve the problem of reconstructing **x** from **y** is to use a *generative* model and invert it with Bayesian inference.
+
+We reformulate the problem as finding the most probable **x** that could have caused **y**. That is:
 
 argmax_**x** P(**x** | **y**)
 
-So, we have to define P(**x** | **y**) and find the **x** that maximizes P(**x** | **y**) given **y**. While, this may seem daunting, it actually has a simple solution. We use Bayes' theorem to reformulate P(**x** | **y**) as a product of P(**y** | **x**) and P(**y** | **x**)
+P(**x** | **y**) is called the posterior. In other words, we have to define the posterior, estimate its parameters and find the argument that maximizes it, which will be the reconstruction of **x** from **y**. While, this may seem daunting, it actually has a simple solution. The posterior assigns a probability to an event by combining our observations and beleifs about it and can be decomposed with Bayes' theorem as the product of how likely our observations are given the event and how likely the event is independent of our observations. That is:
 
 P(**x** | **y**) ~ P(**y** | **x**) * P(**x**)
 
-Here P(**y** | **x**) is called the likelihood: how likely is a particular response given that the stimulus was a particular image and P(x) is called the prior: how like is x For example, in this context, a face image or a white noise image will be extremely unlikely to be observed however, a letter will be quite likely and a digit will be extremely likely.
+P(**y** | **x**) is called the likelihood and P(x) is called the prior.
 
 We will assume that the likelihood and the prior are multivariate Gaussian distributions. A Guassian is characterized by two parameters: a mean vector and a covraiance matrix.
 
