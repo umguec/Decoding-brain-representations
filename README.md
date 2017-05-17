@@ -133,7 +133,7 @@ Now, we can plug any **y** in the above equation and reconstruct the most probab
 
 - Reconstruct **x** from **y** in the test set.
 - Visualize the reconstructions. Tip: You can use reshape function, and imshow or imagesc functions.
-- Compare the reconstructions with the earlier reconstructions. Which one is better? Why?
+- Compare the reconstructions with the earlier reconstructions. Which one is better? Why? Can you think of ways to improve the results?
 
 (The solution of the task is provided in *./solutions/task_4.m*. However, it is recommended that you try to solve the task by youself before referring to the solution.)
 
