@@ -71,11 +71,11 @@ We reformulate the problem as finding the most probable **x** that could have ca
 
 argmax_**x** P(**x** | **y**)
 
-P(**x** | **y**) is called the posterior. In other words, we have to define the posterior, estimate its parameters and find the argument that maximizes it, which will be the reconstruction of **x** from **y**. While, this may seem daunting, it actually has a simple solution. The posterior assigns a probability to an event by combining our observations and beleifs about it and can be decomposed with Bayes' theorem as the product of how likely our observations are given the event and how likely the event is independent of our observations. That is:
+where P(**x** | **y**) is called the posterior. In other words, we have to define the posterior, estimate its parameters and find the argument that maximizes it, which will be the reconstruction of **x** from **y**. While, this may seem daunting, it actually has a simple solution. The posterior assigns a probability to an event by combining our observations and beleifs about it and can be decomposed with Bayes' theorem as the product of how likely our observations are given the event and how likely the event is independent of our observations. That is:
 
 P(**x** | **y**) ~ P(**y** | **x**) * P(**x**)
 
-P(**y** | **x**) is called the likelihood and P(x) is called the prior.
+where P(**y** | **x**) is called the likelihood and P(x) is called the prior.
 
 We will assume that the likelihood and the prior are multivariate Gaussian distributions. A Guassian is characterized by two parameters: a mean vector and a covraiance matrix.
 
