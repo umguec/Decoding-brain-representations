@@ -53,8 +53,8 @@ Note that we can safely ignore the intercept since we normalized our data to hav
 ## Task 2
 
 - Estimate **B** on the training set. Tip: Normally, you should use cross validation to estimate lambda. For simplicity, you can assume that lambda = 10 ^ -6.
-- Reconstruct the stimuli from the responses in the test set.
-- Visualize some of the reconstructions. Tip: You can use reshape function, and imshow or imagesc functions.
+- Reconstruct **x** from **y** in the test set.
+- Visualize the reconstructions. Tip: You can use reshape function, and imshow or imagesc functions.
 
 (The solution of the task is provided in *task_2.m*. However, it is recommended that you try to solve the task by youself before referring to the solution.)
 
@@ -100,19 +100,19 @@ where n is the length of **X**\_prior.
 
 - Estimate **B** on the training set. Tip: Normally, you should use cross-validation to estimate lambda and Sigma_liklihood. For simplicity, you can assume that lambda = 10 ^ -6 and Sigma_liklihood = 10 ^ -3 **I**.
 - Estimate **Sigma**\_prior. Tip: Add 10 ^ -6 to the diagonal of Sigma_prior for regularization.
-- Visualize Sigma_prior. Tip: you can use imagesc function.
+- Visualize **Sigma**\_prior. Tip: you can use imagesc function.
 
 (The solution of the task is provided in *task_3.m*. However, it is recommended that you try to solve the task by youself before referring to the solution.)
 
 ---
 
-Now, we can derive the posterior by multiplying the likelihood and the prior. It turns out that the product of two Gaussians is another Gaussian whose mean vector is given by:
+Having defined the likelihhod and the prior as Gaussians, we can derive the posterior by multiplying them. It turns out that the product of two Gaussians is another Gaussian whose mean vector is given by:
 
 **mu**_posterior = ...
 
-We are almost done. Recall that we want to find **x** that maximixes the posterior. We can start reconstructing stimuli from responses if we can answer the following question:
+Recall that we formulated the reconstruction as the argument that maximixes the posterior, which we derived to be a Gaussian. We will be done once we answer the following question:
 
-Question: What **x** maximizes P(**x** | **y**) considerig that P(**x** | **y**) is a Gaussian?
+Question: What is the argument that maximizes a Gaussian?
 
 .  
 .  
@@ -123,16 +123,16 @@ Question: What **x** maximizes P(**x** | **y**) considerig that P(**x** | **y**)
 
 The answer is its mean vector.
 
-which was our goal! That is:
- 
-**mu**\_posterior = argmax_**x** P(**x** | **y**)
+We can now plug any **y** in the below equation and reconstruct the most probable **x** that could have caused it.
 
-We can now plug any **y** in the above equation and reconstruct the most probable **x** that could have caused it.
+argmax_**x** P(**x** | **y**) =
+**mu**\_posterior =
+...
 
-## Task
+## Task 4
 
-- Reconstruct the stimuli from the responses in the test set.
-- Visualize some of the reconstructions. Tip: You can use reshape function, and imshow or imagesc functions.
+- Reconstruct **x** from **y** in the test set.
+- Visualize the reconstructions. Tip: You can use reshape function, and imshow or imagesc functions.
 - Compare the reconstructions with the earlier reconstructions.
 
 (The solution of the task is provided in *task_4.m*. However, it is recommended that you try to solve the task by youself before referring to the solution.)
