@@ -1,14 +1,7 @@
 # Decoding-brain-representations
 DONDERS (f)MRI TOOL-KIT: From Image Acquisition to Computation Model
 
-In this hands-on session, you will implement a neural decoder for reconstructing perceived stimuli from brain responses. We will be using the dataset that was previously used in the following papers:
-
-[1]  
-[2]  
-[3]  
-[4]  
-
-The papers can be found in the ./papers folder. You can refer them for more details on the dataset and the method.
+In this hands-on session, you will implement a neural decoder for reconstructing perceived stimuli from brain responses. We will be using the dataset that was previously used in a number of papers. These papers along with lecture notes on neural decoding can be found in the ./papers folder. You can refer them for more details on the dataset and/or the method.
 
 The dataset contains fMRI data acquired from the early visual cortex of one subject as the subject was presented with 100 grayscale images of handwritten sixes and nines (50 sixes and 50 nines). The fMRI data has been realigned and slice time corrected. Furthermore, stimulus specific response amplitudes have been estimated with a general linear model.
 
