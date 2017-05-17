@@ -123,8 +123,8 @@ Question: What is the argument that maximizes a Gaussian?
 
 The answer is its mean vector, which is the solution of our initial problem. That is:
 
-argmax_**x** P(**x** | **y**) =
-**mu**\_posterior =
+argmax_**x** P(**x** | **y**) =  
+**mu**\_posterior =  
 ...
 
 Now, we can plug any **y** in the above equation and reconstruct the most probable **x** that could have caused it.
