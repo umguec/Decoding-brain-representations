@@ -42,7 +42,7 @@ We will assume that f is a linear function. That is:
 
 We can estimate **B** with ridge regression. That is:
 
-**B** = (**Y**\_training' **Y**\_training + lambda **I**) ^ -1 **Y**\_training' **X**\_training
+**B** = inv(**Y**\_training' **Y**\_training + lambda **I**) **Y**\_training' **X**\_training
 
 where lambda is the regularization coefficient, **I** is the *q* x *q* identity matrix, and *q* is the number of voxels.
 
@@ -78,7 +78,7 @@ In the case of the liklihood, the mean of the Gaussian is given by:
 
 As before, we can estimate **B** with ridge regression:
 
-**B** = (**X**\_training' **X**\_training + lambda **I**) ^ -1 **X**\_training' **Y**\_training
+**B** = inv(**X**\_training' **X**\_training + lambda **I**) **X**\_training' **Y**\_training
 
 where lambda is the regularization coefficient, I is the *p* x *p* identity matrix, and *p* is the number of pixels.
 
