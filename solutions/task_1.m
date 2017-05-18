@@ -4,6 +4,14 @@
 
 load('69dataset2.mat');
 
+%% Normalize X and Y to have zero mean and unit variance. Tip: Recall that
+% normalization means subtracting the mean of each pixel/voxel from itself
+% and dividng it by its standard deviation. You can use zscore function.
+
+[X, mu, sigma] = zscore(X);
+X_prior        = zscore(X_prior);
+Y              = zscore(Y);
+
 %% Visualize some of the stimuli. Tip: You can use reshape and imagesc
 % functions.
 
@@ -32,14 +40,6 @@ for i = 11 : 20
     axis square;
     axis tight;
 end
-
-%% Normalize X and Y to have zero mean and unit variance. Tip: Recall that
-% normalization means subtracting the mean of each pixel/voxel from itself
-% and dividng it by its standard deviation. You can use zscore function.
-
-[X, mu, sigma] = zscore(X);
-X_prior        = zscore(X_prior);
-Y              = zscore(Y);
 
 %% Split X and Y in two parts called X_training and X_test, and Y_training
 % and Y_test. The training set should contain 80 stimulus-response pairs
